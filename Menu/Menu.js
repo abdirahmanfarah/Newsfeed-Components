@@ -34,12 +34,13 @@ let menuItems = [
   
 */
 
-const menuBar = document.querySelector('img');
+const menuBar = document.querySelector('.header');
 
  
 
 function menu (menuItems) {
   const menuM = document.createElement('div');
+  console.log(menuM);
   const menuList = document.createElement('ul');
   const menuBtn = document.querySelector('.menu-button');
 
@@ -50,6 +51,7 @@ function menu (menuItems) {
   })
 
   menuM.appendChild(menuList);
+  menuBar.appendChild(menuM);
   menuM.classList.add('menu');
 
   menuBtn.addEventListener('click', e =>{
@@ -59,6 +61,21 @@ function menu (menuItems) {
   })
   return menuM;
 };
+
+menu(menuItems);
+
+// const toggleMenu = element => {
+//   // Toggle the "menu--open" class on your menu refence. 
+//   menu.classList.toggle('menu--open');
+//   //TweenMax.to(".menu", 3, {rotationX:360});
+// }
+
+// // Start Here: Create a reference to the ".menu" class
+// const menu = document.querySelector('.menu');
+// // create a reference to the ".menu-button" class
+// const menuButton = document.querySelector('.menu-button');
+// // Using your menuButton reference, add a click handler that calls toggleMenu
+// menuButton.addEventListener('click', ()=> toggleMenu());
 
 // console.log(menuBar);
 
