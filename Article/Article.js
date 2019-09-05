@@ -172,7 +172,7 @@ function createArticle(title, date, firstParagraph , secondParagraph, thirdParag
   //Class names
 
   news.classList.add('article');
-  paraTop.classList.add('date');
+  paraDate.classList.add('date');
   expandButton.classList.add('expandButton');
 
   // Content
@@ -187,7 +187,6 @@ function createArticle(title, date, firstParagraph , secondParagraph, thirdParag
 
   expandButton.addEventListener('click', e =>{
     news.classList.toggle('article-open');
-     expandButton.classList.toggle('toggle-on');
     
   })
 
