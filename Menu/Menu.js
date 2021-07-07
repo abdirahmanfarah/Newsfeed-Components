@@ -33,3 +33,77 @@ let menuItems = [
   Step 6: add the menu component to the DOM.
   
 */
+
+const menuBar = document.querySelector('.header');
+
+ 
+
+function menu (menuItems) {
+  const menuM = document.createElement('div');
+  console.log(menuM);
+  const menuList = document.createElement('ul');
+  const menuBtn = document.querySelector('.menu-button');
+
+  menuItems.forEach(items => {
+    const menuListItems = document.createElement('li');
+    menuListItems.textContent = items;
+    menuList.appendChild(menuListItems);
+  })
+
+  menuM.appendChild(menuList);
+  menuBar.appendChild(menuM);
+  menuM.classList.add('menu');
+
+  menuBtn.addEventListener('click', e =>{
+    console.log(menuBtn)
+    menuM.classList.toggle('menu--open');
+    console.log('Button Clicked');
+  })
+  return menuM;
+};
+
+menu(menuItems);
+
+// const toggleMenu = element => {
+//   // Toggle the "menu--open" class on your menu refence. 
+//   menu.classList.toggle('menu--open');
+//   //TweenMax.to(".menu", 3, {rotationX:360});
+// }
+
+// // Start Here: Create a reference to the ".menu" class
+// const menu = document.querySelector('.menu');
+// // create a reference to the ".menu-button" class
+// const menuButton = document.querySelector('.menu-button');
+// // Using your menuButton reference, add a click handler that calls toggleMenu
+// menuButton.addEventListener('click', ()=> toggleMenu());
+
+// console.log(menuBar);
+
+// function createMenu(list){
+  
+//   //Defining elements
+  
+  // const menu = document.createElement('div');
+  // const menuItem = document.createElement('ul');
+
+//   // Append
+
+//   menu.appendChild(menuItem);
+
+//   // Class Names 
+
+//   menu.classList.add('menu-button');
+  
+//   // Content
+
+//   menuItem.textContent = menuItems;
+
+//   //When Clicked 
+
+  // menuItem.addEventListener('click', e =>{
+  //   menu.classList.toggle('menu--open');
+  //    menu.classList.toggle('toggle-on');
+  // })
+
+//   return createMenu
+// }
